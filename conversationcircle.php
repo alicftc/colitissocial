@@ -16,17 +16,12 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die($conn->connect_error);
 
 if (isset($_GET['id'])) {
-	// Grab the id, sanitize it, and use it to query the db just for
-	// that pet alone 
 	$id = sanitizeMySQL($conn, $_GET['id']);
-	// Note the WHERE pet_id=".$id; will allow us to flexibly use
-	// this template page to show any pet's info 
 	$query1 = "SELECT * FROM `conversation_circles` WHERE circle_id=". $id;
-    //$query2 = "SELECT `drugs.drug_name` FROM `drugs` JOIN `drug_use` ON `drugs.drug_id=drug_use.drug_id` WHERE `drug_use.user_id`=".$id; 
+
 	$result1 = $conn->query($query1);
 	if (!$result1) die ("Invalid circle id.");
 	$rows = $result1->num_rows;
-	// Print the pet's info or show the user an error 
 	if ($rows == 0) {
 		echo "No circle found with id of $id<br>";
 	} else {
