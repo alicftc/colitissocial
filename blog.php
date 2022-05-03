@@ -38,6 +38,7 @@ if (isset($message)) echo $message;
 ?>
 <body>
 <h1>Create a Blog Entry</h1>
+<p class="center">This blog entry will be displayed on the main page. Share your thoughts and experiences, help the community, find support.</p>
   <form method="post" action="">
     <div class="formrow">
       <div class="formcol">

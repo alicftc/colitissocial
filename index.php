@@ -4,12 +4,15 @@ include_once 'includes/header.php';
 ?>
 
 <title>ColitisSocial</title>
+<br><h3 class="center">A Social Networking Website for People with Ulcerative Colitis</h3>
+<br><p class="center">Find doctors, drug information, conversation circles and connect with people with the same condition. Find support and give support.</p>
+<br><br>
 
 <?php
 require_once 'includes/auth.php';
 require_once 'includes/login.php';
 include_once 'includes/search.php';
-echo "<h2 class=\"center\">Recent Blog Posts</h2>";
+echo "<br><h2 class=\"center\">Recent Blog Posts</h2>";
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die($conn->connect_error);
 
